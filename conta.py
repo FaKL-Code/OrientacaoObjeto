@@ -18,3 +18,7 @@ class Conta:
             self.__saldo -= valor
         else: 
             print("Saldo insuficiente")
+            
+    def tranferir(self, valor, destino):
+        self.sacar(valor)
+        destino.depositar(valor)
