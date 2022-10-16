@@ -12,13 +12,16 @@ class Conta:
         
     def depositar(self, valor):
         self.__saldo += valor
-        
+                    
+    def __saque_permitido(self, valor):
+        return valor <= (self.__saldo + self.__limite)
+    
     def sacar(self, valor):
-        if valor <= self.__saldo:
+        if self.__saque_permitido(valor):
             self.__saldo -= valor
         else: 
             print("Saldo insuficiente")
-            
+      
     def tranferir(self, valor, destino):
         self.sacar(valor)
         destino.depositar(valor)
@@ -42,3 +45,7 @@ class Conta:
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
+        
+    @staticmethod
+    def cod_banco(self):
+        return "001"
