@@ -20,24 +20,24 @@ class Programa:
     def likes(self):
         self._likes += 1
 
-    def imprimir(self):
-        print(f'{self.nome} - {self.ano} - {self.likes} Likes')
+    def __str__(self):
+        return f'{self.nome} - {self.ano} - {self.likes} Likes'
 
 class Filme(Programa):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
         
-    def imprimir(self):
-        print(f'{self.nome} - {self.ano} - {self.duracao} min - {self.likes} Likes')
+    def __str__(self):
+        return f'{self.nome} - {self.ano} - {self.duracao} min - {self.likes} Likes'
  
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
         
-    def imprimir(self):
-        print(f'{self.nome} - {self.ano} - {self.temporadas} temporadas - {self.likes} Likes')
+    def __str__(self):
+        return f'{self.nome} - {self.ano} - {self.temporadas} temporadas - {self.likes} Likes'
         
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
 
@@ -46,4 +46,4 @@ atlanta = Serie('atlanta', 2018, 2)
 filmes_e_series = [vingadores, atlanta]
 
 for programa in filmes_e_series:
-    Programa.imprimir()
+    print(Programa)
