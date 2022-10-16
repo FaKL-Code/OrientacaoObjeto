@@ -37,3 +37,9 @@ print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} - Duração: {vingadores
 atlanta = Serie('atlanta', 2018, 2)
 
 print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas} - Likes: {atlanta.likes}')
+
+filmes_e_series = [vingadores, atlanta]
+
+for programa in filmes_e_series:
+    detalhes = programa.duracao if hasattr(programa, 'duracao') else programa.temporadas
+    print(f'{programa.nome} - {detalhes} D - {programa.likes}')
